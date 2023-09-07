@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'AlibabaPuHuiTi-3-55-Regular';
+    src: url('../font/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../font/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'JetBrains Mono', 'AlibabaPuHuiTi-3-55-Regular', Arial, sans-serif;
+    background-color: #F5F5F6;
+}
+

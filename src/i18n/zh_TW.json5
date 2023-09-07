@@ -1,0 +1,185 @@
+{
+  "ConfigIO": {
+    "Export": {
+      "Notification": {
+        "Error": {
+          "Content": "失敗原因：{msg}",
+          "Title": "匯入失敗",
+        },
+        "Success": {
+          "Content": "已成功匯入配置",
+          "Title": "匯入成功",
+        },
+      },
+    },
+    "Import": {
+      "Notification": {
+        "Error": {
+          "Content": "失敗原因：{msg}",
+          "Title": "匯入失敗",
+        },
+        "Success": {
+          "Content": "已成功匯入配置",
+          "Title": "匯入成功",
+        },
+      },
+    },
+    "Parse": {
+      "Error": {
+        "KeyCountMismatch": "配置檔案 {path} 欄位屬性數量不匹配",
+        "KeyNotExists": "配置檔案缺少 {path} 欄位",
+        "TypeMismatch": "配置檔案中 {path} 欄位的型別為 {testType}，但是正確型別為 {standardType}",
+        "VersionNotSpecified": "配置檔案版本號缺失",
+        "VersionNotSupported": "配置檔案版本號不支援",
+      },
+    },
+  },
+  "Help": {
+    "CatalogTitle": "目錄",
+  },
+  "MainView": {
+    "TabTitle": {
+      "Help": "幫助",
+      "RemoveSetting": "原序號移除規則設定",
+      "Renumber": "一鍵重排",
+      "RenumberSetting": "新序號生成規則設定",
+    },
+  },
+  "Processor": {
+    "RemoveSerialNumberProcessor": {
+      "InvalidRegex": "正則表示式 {regex} 無效",
+      "InvalidTitleFormat": "標題格式錯誤，應當為 ”# 標題名“",
+    },
+    "RenumberProcessor": {
+      "UnknownHandleType": "未知的處理策略型別：{type}，請嘗試恢復預設配置檔案",
+    },
+  },
+  "RemoveSettingTab": {
+    "PreviewArea": {
+      "InputPlaceholder": "請輸入標題",
+    },
+    "SettingArea": {
+      "InputPlaceholder": "請輸入正則表示式",
+    },
+    "TestOneTitleLine": {
+      "InvalidRegex": "正則表示式 \"{regex}\" 不正確",
+      "Notification": {
+        "Content": "失敗原因：{msg}",
+        "Title": "測試失敗",
+      },
+      "TestFailedOutput": "測試失敗，失敗原因：{msg}",
+    },
+    "Toolbar": {
+      "Restore": "恢復本頁預設",
+    },
+  },
+  "RenumberSettingTab": {
+    "HandleOptionLabel": {
+      "KeepTitle": "僅標題",
+      "Original": "原始",
+      "Quote": "引用",
+    },
+    "SettingArea": {
+      "Placeholder": {
+        "Prefix": "字首",
+        "Suffix": "字尾",
+      },
+      "Title": {
+        "Handle": {
+          "GE6": "大於 6 級的標題策略",
+          "Unspecified": "未指定層級的標題策略",
+        },
+        "Strategy": {
+          "Independent": "獨立",
+          "KeepLastSuffix": "末綴",
+          "Prefix": "字首",
+          "RowTitle": "第 {index} 級標題",
+          "StartIndex": "起始序號",
+          "Suffix": "字尾",
+          "Type": "型別",
+        },
+      },
+    },
+    "TestConfig": {
+      "Notification": {
+        "Content": "失敗原因：{msg}",
+        "Title": "測試失敗",
+      },
+      "OutputToMarkdownPreview": "```\n測試失敗，失敗原因：{msg}\n```",
+    },
+    "Toolbar": {
+      "Restore": "恢復本頁預設",
+    },
+  },
+  "RenumberTab": {
+    "CopyProcessed": {
+      "Success": {
+        "Content": "已將處理結果複製到剪貼簿",
+        "Title": "複製成功",
+      },
+    },
+    "ProcessMarkdown": {
+      "Fail": {
+        "Content": "錯誤原因：{msg}",
+        "OutputToMarkdownPreview": "```\n處理失敗，錯誤原因：{msg}\n```",
+        "Title": "處理失敗",
+      },
+      "Success": {
+        "Content": "已將處理結果展示在右側預覽區",
+        "Title": "處理成功",
+      },
+    },
+    "Toolbar": {
+      "CopyProcessedResult": "複製處理結果",
+      "DownloadProcessedResult": "下載處理結果",
+      "ExportConfig": "匯出配置",
+      "ImportConfig": "匯入配置",
+      "ImportMarkdown": "匯入 Markdown 檔案",
+      "StartRenumber": "開始重排",
+    },
+    "UploadConfig": {
+      "Fail": {
+        "Content": "檔案不存在或所上傳的檔案不是 json 檔案",
+        "Title": "匯入失敗",
+      },
+      "Success": {
+        "Content": "JSON 配置檔案匯入成功",
+        "Title": "匯入成功",
+      },
+    },
+    "UploadMarkdown": {
+      "Fail": {
+        "Content": "檔案不存在或所上傳的檔案不是 md 檔案",
+        "Title": "匯入失敗",
+      },
+      "Success": {
+        "Content": "Markdown 檔案匯入成功",
+        "Title": "匯入成功",
+      },
+    },
+  },
+  "SerialNumber": {
+    "SerialNumberChecker": {
+      "Error": {
+        "GE0": "嘗試獲取序號 {index}，但序號必須為非負整數。請嘗試修改新序號生成規則或恢復預設值。",
+        "GE1": "嘗試獲取序號 {index}，但序號必須為大於等於 1 的整數。請嘗試修改新序號生成規則或恢復預設值。",
+        "GE1LE3999": "嘗試獲取序號 {index}，但序號的取值範圍必須在 [1, 3999] 區間內。請嘗試修改新序號生成規則或恢復預設值。",
+      },
+    },
+    "SerialNumberClasses": {
+      "SerialNumberAbstractClass": {
+        "Error": {
+          "CannotConstructAbstractClass": "不能例項化 SerialNumber 類，你應該例項化它的子類",
+          "MustImplementGet": "SerialNumber 的子類必須實現 get 方法",
+        },
+      },
+    },
+    "SerialNumberFactory": {
+      "Error": {
+        "CustomSerialNumberGetterMustBeAFunction": "自定義的序號生成規則應當是一個函式物件",
+        "CustomSerialNumberTypeRequiresCustomSerialNumberGetter": "若序號型別為自定義，則必須提供序號生成規則",
+        "UnknownSerialNumberType": "未知的序號型別：{type}",
+      },
+    },
+  },
+}
