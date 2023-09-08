@@ -27,7 +27,7 @@ const {t} = useI18n()
 const notification = useNotification()
 
 // 定义数据
-const demoMarkdownText = defaultInputMarkdownText
+const demoMarkdownText = ref(defaultInputMarkdownText)
 const demoConfiguration = reactive(deepClone(defaultConfiguration))
 const demoTestTitles = ref(defaultTestTitles)
 const demoTestMarkdownText = ref(defaultTestMarkdownText)
