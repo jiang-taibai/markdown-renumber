@@ -14,7 +14,9 @@
 
 </div>
 
-![Cover](assets/img/cover.gif "Cover")
+<p align="center">
+    <img src="assets/img/cover.gif" width="50%" alt="Cover">
+</p>
 
 ## 1. Project background
 
