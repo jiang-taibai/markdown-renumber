@@ -1,10 +1,17 @@
-# <div style="text-align: center">Markdown 标题重编号</div>
+# <div align="center">Markdown 标题重编号</div>
 
-<div style="display: flex; align-content: center; justify-content: center; gap: 8px">
-  <img src="https://img.shields.io/badge/Build-passing-%2396C40F" alt="Build-passing"/>
+<div align="center">
+  <img src="https://img.shields.io/badge/Interaction-WebUI-%2396C40F" alt="Interaction-WebUI"/>
   <img src="https://img.shields.io/badge/Version-1.0.0-%231081C1" alt="Version-1.0.0"/>
   <img src="https://img.shields.io/badge/MIT_License-%2396C40F" alt="MIT License"/>
-  <img src="https://img.shields.io/badge/PoweredBy-Jiang_Liu-%2396C40F" alt="PoweredBy-Jiang_Liu"/>
+</div>
+
+<div align="center">
+
+[简体中文](/README.md) |
+[繁體中文](/README-zh_TW.md) |
+[English](/README-en_US.md)
+
 </div>
 
 ## 1. 项目背景
@@ -21,7 +28,7 @@
 ## 2. 项目特点
 
 - 一键式处理：你只需要导入待编号的 Markdown 文档，即可完成所有的操作
-- 编号的去除与生成：能够去除原来的标题编号，再重新编号
+- 编号的去除与生成全流程：能够去除原来的标题编号，再重新编号
 - 操作友好：基于 Web 的 GUI 界面，无需执行代码
 - 高度自定义：原生序号去除规则由正则表达式列表实现，编号生成规则可由用户高度自定义样式
 - 安全可靠：项目开源，离线处理文档。配置文件存储在本地，不会上传到服务器。不会收集用户的任何信息
@@ -32,12 +39,12 @@
 
 你可以访问以下链接来使用本项目：
 
-- GitHub Page: [#](#)
-- Gitee Page: [#](#)
+- GitHub Page: [https://jiang-taibai.github.io/markdown-renumber/](https://jiang-taibai.github.io/markdown-renumber/)
+- Gitee Page: [https://jiang-taibai.gitee.io/markdown-renumber/](https://jiang-taibai.gitee.io/markdown-renumber/)
 
 ### 3.2 下载到本地
 
-你也可以从 [release]() 将本项目下载到本地，打开压缩包内的 `index.html` 文件即可使用。
+你也可以从 [Releases](https://github.com/jiang-taibai/markdown-renumber/releases/latest) 将本项目下载到本地，打开压缩包内的 `index.html` 文件即可使用。
 
 ## 4. 项目截图
 
@@ -62,6 +69,7 @@
 - UI 库：[Naive UI](https://github.com/tusen-ai/naive-ui)
 - 代码高亮支持：[highlight.js](https://github.com/highlightjs/highlight.js)
 - 帮助文档 Markdown 渲染支持：[md-editor-v3](https://github.com/imzbf/md-editor-v3)
+- 国际化支持：[vue-i18n](https://github.com/kazupon/vue-i18n)
 
 字体：
 
