@@ -325,9 +325,7 @@ flowchart TD
 1. 配置设置：不要在配置和测试样例中写入任何敏感信息 
 2. 浏览器安全：浏览器不要使用不可信的插件和扩展
 
-# 5. 项目地址
-
-TODO`
+`
 
 const zhTW = `# 1. 基本介紹
 
@@ -654,9 +652,6 @@ flowchart TD
 1. 配置設定：不要在配置和測試樣例中寫入任何敏感資訊
 2. 瀏覽器安全：瀏覽器不要使用不可信的外掛和擴充套件
 
-# 5. 專案地址
-
-TODO
 `
 
 const enUS = `# 1. Basic introduction
@@ -984,9 +979,6 @@ For the persistence of the configuration, you can still export the configuration
 1. Configuration settings: Do not write any sensitive information in configuration and test samples
 2. Browser security: Do not use untrusted plug-ins and extensions in your browser
 
-# 5. Project address
-
-TODO
 `
 
 export const getLocalHelpDocument = () => {
