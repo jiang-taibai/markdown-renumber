@@ -1,7 +1,8 @@
 # 1. Level 1
 
 > This is a mixed-number Markdown article. All titles may be numbered or unnumbered.  
-> 这是一个混合编号的 Markdown 文章。所有标题可以是编号的，也可以是非编号的。
+> 这是一个混合编号的 Markdown 文章。所有标题可以是编号的，也可以是非编号的。  
+> 這是一個混合編號的 Markdown 文章。所有標題可以是編號的，也可以是非編號的。
 
 ```python
 # Code block

@@ -1,6 +1,6 @@
-import zhCN from './zh_CN.json5'
-import zhTW from './zh_TW.json5'
-import enUS from './en_US.json5'
+import zhCN from './zh_CN.json'
+import zhTW from './zh_TW.json'
+import enUS from './en_US.json'
 
 import {createI18n} from 'vue-i18n';
 

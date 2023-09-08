@@ -4,25 +4,25 @@
       "Notification": {
         "Error": {
           "Content": "Failure reason: {msg}",
-          "Title": "Import Failure",
+          "Title": "Import Failure"
         },
         "Success": {
           "Content": "Configuration has been successfully imported",
-          "Title": "Imported Successfully",
-        },
-      },
+          "Title": "Imported Successfully"
+        }
+      }
     },
     "Import": {
       "Notification": {
         "Error": {
           "Content": "Failure reason: {msg}",
-          "Title": "Failed to Import",
+          "Title": "Failed to Import"
         },
         "Success": {
           "Content": "Configuration has been successfully imported",
-          "Title": "Imported Successfully",
-        },
-      },
+          "Title": "Imported Successfully"
+        }
+      }
     },
     "Parse": {
       "Error": {
@@ -30,64 +30,64 @@
         "KeyNotExists": "Configuration file is missing {path} field",
         "TypeMismatch": "The {path} field in the configuration file is of type {testType}, but the correct type is {standardType}",
         "VersionNotSpecified": "Configuration file version number is missing",
-        "VersionNotSupported": "Configuration file version number is not supported",
-      },
-    },
+        "VersionNotSupported": "Configuration file version number is not supported"
+      }
+    }
   },
   "Help": {
-    "CatalogTitle": "Catalog",
+    "CatalogTitle": "Catalog"
   },
   "MainView": {
     "TabTitle": {
       "Help": "Help",
       "RemoveSetting": "Number Removal Rule",
       "Renumber": "One-Click Renumbering",
-      "RenumberSetting": "Number Generative Rule",
-    },
+      "RenumberSetting": "Number Generative Rule"
+    }
   },
   "Processor": {
     "RemoveSerialNumberProcessor": {
       "InvalidRegex": "Invalid regular expression: {regex}",
-      "InvalidTitleFormat": "The title format is wrong, the correct format is \"# title name\"",
+      "InvalidTitleFormat": "The title format is wrong, the correct format is \"# title name\""
     },
     "RenumberProcessor": {
-      "UnknownHandleType": "Unknown processing policy type: {type}, please try restoring the default configuration file",
-    },
+      "UnknownHandleType": "Unknown processing policy type: {type}, please try restoring the default configuration file"
+    }
   },
   "RemoveSettingTab": {
     "PreviewArea": {
-      "InputPlaceholder": "Please enter a title",
+      "InputPlaceholder": "Please enter a title"
     },
     "SettingArea": {
-      "InputPlaceholder": "Please enter a regular expression",
+      "InputPlaceholder": "Please enter a regular expression"
     },
     "TestOneTitleLine": {
       "InvalidRegex": "The regular expression \"{regex}\" is incorrect",
       "Notification": {
         "Content": "Failure reason: {msg}",
-        "Title": "Test Failure",
+        "Title": "Test Failure"
       },
-      "TestFailedOutput": "Test failed. Reason for failure: {msg}",
+      "TestFailedOutput": "Test failed. Reason for failure: {msg}"
     },
     "Toolbar": {
-      "Restore": "Reset the configuration of this page",
-    },
+      "Restore": "Reset the configuration of this page"
+    }
   },
   "RenumberSettingTab": {
     "HandleOptionLabel": {
       "KeepTitle": "Keep Title Only",
       "Original": "Original",
-      "Quote": "Quotation",
+      "Quote": "Quotation"
     },
     "SettingArea": {
       "Placeholder": {
         "Prefix": "Prefix",
-        "Suffix": "Suffix",
+        "Suffix": "Suffix"
       },
       "Title": {
         "Handle": {
           "GE6": "Title Strategy for Level 7+",
-          "Unspecified": "Title Strategy for Unspecified",
+          "Unspecified": "Title Strategy for Unspecified"
         },
         "Strategy": {
           "Independent": "Standalone",
@@ -96,38 +96,38 @@
           "RowTitle": "Level {index}",
           "StartIndex": "Starting Number",
           "Suffix": "Suffix",
-          "Type": "Type",
-        },
-      },
+          "Type": "Type"
+        }
+      }
     },
     "TestConfig": {
       "Notification": {
         "Content": "Reason for failure: {msg}",
-        "Title": "Testing Failed",
+        "Title": "Testing Failed"
       },
-      "OutputToMarkdownPreview": "```\nTest failed, reason for failure: {msg}\n````",
+      "OutputToMarkdownPreview": "```\nTest failed, reason for failure: {msg}\n````"
     },
     "Toolbar": {
-      "Restore": "Reset the configuration of this page",
-    },
+      "Restore": "Reset the configuration of this page"
+    }
   },
   "RenumberTab": {
     "CopyProcessed": {
       "Success": {
         "Content": "Processing results have been copied to the clipboard",
-        "Title": "Copy Successfully",
-      },
+        "Title": "Copy Successfully"
+      }
     },
     "ProcessMarkdown": {
       "Fail": {
         "Content": "Reason for error: {msg}",
         "OutputToMarkdownPreview": "```\nProcessing failed, error cause: {msg}\n````",
-        "Title": "Processing Failed",
+        "Title": "Processing Failed"
       },
       "Success": {
         "Content": "Processing results have been displayed in the right-hand preview area",
-        "Title": "Processed Successfully",
-      },
+        "Title": "Processed Successfully"
+      }
     },
     "Toolbar": {
       "CopyProcessedResult": "Copy Result",
@@ -135,51 +135,54 @@
       "ExportConfig": "Export Configuration",
       "ImportConfig": "Import Configuration",
       "ImportMarkdown": "Import Markdown",
-      "StartRenumber": "Begin Renumbering",
+      "StartRenumber": "Begin Renumbering"
     },
     "UploadConfig": {
       "Fail": {
         "Content": "The file does not exist or the uploaded file is not a json file.",
-        "Title": "Failed to Import",
+        "Title": "Failed to Import"
       },
       "Success": {
         "Content": "JSON configuration file imported successfully",
-        "Title": "Imported Successfully",
-      },
+        "Title": "Imported Successfully"
+      }
     },
     "UploadMarkdown": {
       "Fail": {
         "Content": "The file does not exist or the uploaded file is not an md file.",
-        "Title": "Failed to Import",
+        "Title": "Failed to Import"
       },
       "Success": {
         "Content": "Markdown file imported successfully",
-        "Title": "Imported Successfully",
-      },
-    },
+        "Title": "Imported Successfully"
+      }
+    }
   },
   "SerialNumber": {
     "SerialNumberChecker": {
       "Error": {
         "GE0": "Trying to get the serial number {index}, but the serial number must be a non-negative integer. Please try to change the new serial number generation rule or restore the default value.",
         "GE1": "Tried to get the serial number {index}, but the serial number must be an integer greater than or equal to 1. Please try to change the new serial number generation rule or restore the default value.",
-        "GE1LE3999": "Trying to get the serial number {index}, but the serial number must be in the range [1, 3999]. Please try to change the new serial number generation rule or restore the default value.",
-      },
+        "GE1LE3999": "Trying to get the serial number {index}, but the serial number must be in the range [1, 3999]. Please try to change the new serial number generation rule or restore the default value."
+      }
     },
     "SerialNumberClasses": {
       "SerialNumberAbstractClass": {
         "Error": {
           "CannotConstructAbstractClass": "You cannot instantiate the SerialNumber class, you should instantiate its subclasses.",
-          "MustImplementGet": "Subclasses of SerialNumber must implement the get method.",
-        },
-      },
+          "MustImplementGet": "Subclasses of SerialNumber must implement the get method."
+        }
+      }
     },
     "SerialNumberFactory": {
       "Error": {
         "CustomSerialNumberGetterMustBeAFunction": "A customized serial number generation rule should be a function object",
         "CustomSerialNumberTypeRequiresCustomSerialNumberGetter": "If the serial number type is custom, the serial number generation rule must be provided",
-        "UnknownSerialNumberType": "Unknown serial number type: {type}",
-      },
-    },
+        "UnknownSerialNumberType": "Unknown serial number type: {type}"
+      }
+    }
   },
+  "TopToolbar": {
+    "Upgraded": "Latest Version {version}"
+  }
 }

@@ -323,8 +323,4 @@ For the persistence of the configuration, you can still export the configuration
 1. Configuration settings: Do not write any sensitive information in configuration and test samples
 2. Browser security: Do not use untrusted plug-ins and extensions in your browser
 
-# 5. Project address
-
-TODO
-
 

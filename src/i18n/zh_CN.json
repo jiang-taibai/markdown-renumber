@@ -4,25 +4,25 @@
       "Notification": {
         "Error": {
           "Content": "失败原因：{msg}",
-          "Title": "导入失败",
+          "Title": "导入失败"
         },
         "Success": {
           "Content": "已成功导入配置",
-          "Title": "导入成功",
-        },
-      },
+          "Title": "导入成功"
+        }
+      }
     },
     "Import": {
       "Notification": {
         "Error": {
           "Content": "失败原因：{msg}",
-          "Title": "导入失败",
+          "Title": "导入失败"
         },
         "Success": {
           "Content": "已成功导入配置",
-          "Title": "导入成功",
-        },
-      },
+          "Title": "导入成功"
+        }
+      }
     },
     "Parse": {
       "Error": {
@@ -30,64 +30,64 @@
         "KeyNotExists": "配置文件缺少 {path} 字段",
         "TypeMismatch": "配置文件中 {path} 字段的类型为 {testType}，但是正确类型为 {standardType}",
         "VersionNotSpecified": "配置文件版本号缺失",
-        "VersionNotSupported": "配置文件版本号不支持",
-      },
-    },
+        "VersionNotSupported": "配置文件版本号不支持"
+      }
+    }
   },
   "Help": {
-    "CatalogTitle": "目录",
+    "CatalogTitle": "目录"
   },
   "MainView": {
     "TabTitle": {
       "Help": "帮助",
       "RemoveSetting": "原序号移除规则设置",
       "Renumber": "一键重排",
-      "RenumberSetting": "新序号生成规则设置",
-    },
+      "RenumberSetting": "新序号生成规则设置"
+    }
   },
   "Processor": {
     "RemoveSerialNumberProcessor": {
       "InvalidRegex": "正则表达式 {regex} 无效",
-      "InvalidTitleFormat": "标题格式错误，应当为 ”# 标题名“",
+      "InvalidTitleFormat": "标题格式错误，应当为 ”# 标题名“"
     },
     "RenumberProcessor": {
-      "UnknownHandleType": "未知的处理策略类型：{type}，请尝试恢复默认配置文件",
-    },
+      "UnknownHandleType": "未知的处理策略类型：{type}，请尝试恢复默认配置文件"
+    }
   },
   "RemoveSettingTab": {
     "PreviewArea": {
-      "InputPlaceholder": "请输入标题",
+      "InputPlaceholder": "请输入标题"
     },
     "SettingArea": {
-      "InputPlaceholder": "请输入正则表达式",
+      "InputPlaceholder": "请输入正则表达式"
     },
     "TestOneTitleLine": {
       "InvalidRegex": "正则表达式 \"{regex}\" 不正确",
       "Notification": {
         "Content": "失败原因：{msg}",
-        "Title": "测试失败",
+        "Title": "测试失败"
       },
-      "TestFailedOutput": "测试失败，失败原因：{msg}",
+      "TestFailedOutput": "测试失败，失败原因：{msg}"
     },
     "Toolbar": {
-      "Restore": "恢复本页默认",
-    },
+      "Restore": "恢复本页默认"
+    }
   },
   "RenumberSettingTab": {
     "HandleOptionLabel": {
       "KeepTitle": "仅标题",
       "Original": "原始",
-      "Quote": "引用",
+      "Quote": "引用"
     },
     "SettingArea": {
       "Placeholder": {
         "Prefix": "前缀",
-        "Suffix": "后缀",
+        "Suffix": "后缀"
       },
       "Title": {
         "Handle": {
           "GE6": "大于 6 级的标题策略",
-          "Unspecified": "未指定层级的标题策略",
+          "Unspecified": "未指定层级的标题策略"
         },
         "Strategy": {
           "Independent": "独立",
@@ -96,38 +96,38 @@
           "RowTitle": "第 {index} 级标题",
           "StartIndex": "起始序号",
           "Suffix": "后缀",
-          "Type": "类型",
-        },
-      },
+          "Type": "类型"
+        }
+      }
     },
     "TestConfig": {
       "Notification": {
         "Content": "失败原因：{msg}",
-        "Title": "测试失败",
+        "Title": "测试失败"
       },
-      "OutputToMarkdownPreview": "```\n测试失败，失败原因：{msg}\n```",
+      "OutputToMarkdownPreview": "```\n测试失败，失败原因：{msg}\n```"
     },
     "Toolbar": {
-      "Restore": "恢复本页默认",
-    },
+      "Restore": "恢复本页默认"
+    }
   },
   "RenumberTab": {
     "CopyProcessed": {
       "Success": {
         "Content": "已将处理结果复制到剪贴板",
-        "Title": "复制成功",
-      },
+        "Title": "复制成功"
+      }
     },
     "ProcessMarkdown": {
       "Fail": {
         "Content": "错误原因：{msg}",
         "OutputToMarkdownPreview": "```\n处理失败，错误原因：{msg}\n```",
-        "Title": "处理失败",
+        "Title": "处理失败"
       },
       "Success": {
         "Content": "已将处理结果展示在右侧预览区",
-        "Title": "处理成功",
-      },
+        "Title": "处理成功"
+      }
     },
     "Toolbar": {
       "CopyProcessedResult": "复制处理结果",
@@ -135,51 +135,54 @@
       "ExportConfig": "导出配置",
       "ImportConfig": "导入配置",
       "ImportMarkdown": "导入 Markdown 文件",
-      "StartRenumber": "开始重排",
+      "StartRenumber": "开始重排"
     },
     "UploadConfig": {
       "Fail": {
         "Content": "文件不存在或所上传的文件不是 json 文件",
-        "Title": "导入失败",
+        "Title": "导入失败"
       },
       "Success": {
         "Content": "JSON 配置文件导入成功",
-        "Title": "导入成功",
-      },
+        "Title": "导入成功"
+      }
     },
     "UploadMarkdown": {
       "Fail": {
         "Content": "文件不存在或所上传的文件不是 md 文件",
-        "Title": "导入失败",
+        "Title": "导入失败"
       },
       "Success": {
         "Content": "Markdown 文件导入成功",
-        "Title": "导入成功",
-      },
-    },
+        "Title": "导入成功"
+      }
+    }
   },
   "SerialNumber": {
     "SerialNumberChecker": {
       "Error": {
         "GE0": "尝试获取序号 {index}，但序号必须为非负整数。请尝试修改新序号生成规则或恢复默认值。",
         "GE1": "尝试获取序号 {index}，但序号必须为大于等于 1 的整数。请尝试修改新序号生成规则或恢复默认值。",
-        "GE1LE3999": "尝试获取序号 {index}，但序号的取值范围必须在 [1, 3999] 区间内。请尝试修改新序号生成规则或恢复默认值。",
-      },
+        "GE1LE3999": "尝试获取序号 {index}，但序号的取值范围必须在 [1, 3999] 区间内。请尝试修改新序号生成规则或恢复默认值。"
+      }
     },
     "SerialNumberClasses": {
       "SerialNumberAbstractClass": {
         "Error": {
           "CannotConstructAbstractClass": "不能实例化 SerialNumber 类，你应该实例化它的子类",
-          "MustImplementGet": "SerialNumber 的子类必须实现 get 方法",
-        },
-      },
+          "MustImplementGet": "SerialNumber 的子类必须实现 get 方法"
+        }
+      }
     },
     "SerialNumberFactory": {
       "Error": {
         "CustomSerialNumberGetterMustBeAFunction": "自定义的序号生成规则应当是一个函数对象",
         "CustomSerialNumberTypeRequiresCustomSerialNumberGetter": "若序号类型为自定义，则必须提供序号生成规则",
-        "UnknownSerialNumberType": "未知的序号类型：{type}",
-      },
-    },
+        "UnknownSerialNumberType": "未知的序号类型：{type}"
+      }
+    }
   },
+  "TopToolbar": {
+    "Upgraded": "最新版本 {version}"
+  }
 }
