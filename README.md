@@ -80,4 +80,4 @@
 
 本项目遵循 [MIT](https://opensource.org/licenses/MIT) 开源协议。
 
-CopyRight © 2023 [Jiang Liu](https://coderjiang.com) All Rights Reserved.
+CopyRight © 2023 [Jiang Liu](https://coderjiang.com)

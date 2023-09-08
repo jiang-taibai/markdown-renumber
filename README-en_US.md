@@ -80,4 +80,4 @@ Font:
 
 This project follows the [MIT](https://opensource.org/licenses/MIT) open source license.
 
-CopyRight © 2023 [Jiang Liu](https://coderjiang.com) All Rights Reserved.
+CopyRight © 2023 [Jiang Liu](https://coderjiang.com)
