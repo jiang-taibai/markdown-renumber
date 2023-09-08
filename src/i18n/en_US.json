@@ -45,6 +45,24 @@
       "RenumberSetting": "Number Generative Rule"
     }
   },
+  "MarkdownEditorAndPreview": {
+    "ButtonText": {
+      "Cancel": "Cancel",
+      "Copy": "Copy",
+      "Edit": "Edit",
+      "Save": "Save"
+    },
+    "Copy": {
+      "Fail": {
+        "Content": "Copy failed, error reason: {msg}",
+        "Title": "Copy Failed"
+      },
+      "Success": {
+        "Content": "Copied to clipboard",
+        "Title": "Copied Successfully"
+      }
+    }
+  },
   "Processor": {
     "RemoveSerialNumberProcessor": {
       "InvalidRegex": "Invalid regular expression: {regex}",

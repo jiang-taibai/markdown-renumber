@@ -45,6 +45,24 @@
       "RenumberSetting": "新序號生成規則設定"
     }
   },
+  "MarkdownEditorAndPreview": {
+    "ButtonText": {
+      "Cancel": "取消",
+      "Copy": "複製",
+      "Edit": "編輯",
+      "Save": "儲存"
+    },
+    "Copy": {
+      "Fail": {
+        "Content": "複製失敗，錯誤原因：{msg}",
+        "Title": "複製失敗"
+      },
+      "Success": {
+        "Content": "已複製到剪貼簿",
+        "Title": "複製成功"
+      }
+    }
+  },
   "Processor": {
     "RemoveSerialNumberProcessor": {
       "InvalidRegex": "正則表示式 {regex} 無效",

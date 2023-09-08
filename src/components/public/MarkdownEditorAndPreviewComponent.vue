@@ -1,10 +1,12 @@
 <script>
-import {NButton, NCode, NScrollbar, useNotification} from "naive-ui";
-import {computed, defineComponent, ref, watchEffect} from "vue";
+// 第三方库
+import {NButton, NCode, NScrollbar, NInput, useNotification} from "naive-ui";
+import {computed, defineComponent, nextTick, onMounted, ref, watchEffect} from "vue";
+import {useI18n} from "vue-i18n";
 
 export default defineComponent({
   name: "MarkdownEditorAndPreview",
-  components: {NCode, NButton, NScrollbar},
+  components: {NCode, NButton, NScrollbar, NInput},
   props: {
     md: {
       type: String,
@@ -23,33 +25,42 @@ export default defineComponent({
   },
   emits: ['update:md'],
   setup(props, {emit}) {
+    // 注册组件
     const notification = useNotification()
+    const {t} = useI18n()
+
+    // 定义数据
     const md = ref(props.md)
+    let oldMd = props.md
     const showToolbar = props.showToolbar
     const height = props.height
-
-    const editor = ref(null)
     const editState = ref(false)
-    const toggleButtonText = computed(() => editState.value ? '保存' : '编辑')
+
+    // 计算属性：编辑状态下的按钮文字
+    const toggleButtonText = computed(() => editState.value ? t('MarkdownEditorAndPreview.ButtonText.Save') : t('MarkdownEditorAndPreview.ButtonText.Edit'))
     const onToggle = () => {
       if (editState.value) {
-        md.value = editor.value.innerText;
+        oldMd = md.value;
         emit('update:md', md.value);
       }
       editState.value = !editState.value;
+    }
+    const onCancelEdit = () => {
+      md.value = oldMd;
+      editState.value = false;
     }
     const onCopy = () => {
       navigator.clipboard.writeText(md.value).then(() => {
         notification.success({
           duration: 1000,
-          title: '复制成功',
-          content: '已复制到剪贴板',
+          title: t('MarkdownEditorAndPreview.Copy.Success.Title'),
+          content: t('MarkdownEditorAndPreview.Copy.Success.Content'),
         })
       }).catch(err => {
         notification.error({
           duration: 5000,
-          title: '复制失败',
-          content: '复制失败，错误原因：' + err,
+          title: t('MarkdownEditorAndPreview.Copy.Fail.Title'),
+          content: t('MarkdownEditorAndPreview.Copy.Fail.Content', err.message),
         })
       });
     }
@@ -57,11 +68,11 @@ export default defineComponent({
       md.value = props.md;
     });
     return {
+      t,
       md, showToolbar, height,
-      editor,
       editState,
       toggleButtonText,
-      onCopy, onToggle
+      onCopy, onToggle, onCancelEdit,
     }
   }
 })
@@ -77,13 +88,18 @@ export default defineComponent({
           <span class="maximize"></span>
         </div>
         <div class="button-group" v-show="showToolbar">
+          <n-button secondary size="small" type="primary" @click="onCancelEdit" v-if="editState">
+            {{ t('MarkdownEditorAndPreview.ButtonText.Cancel') }}
+          </n-button>
           <n-button secondary size="small" type="primary" @click="onToggle">{{ toggleButtonText }}</n-button>
-          <n-button secondary size="small" type="primary" @click="onCopy">复制</n-button>
+          <n-button secondary size="small" type="primary" @click="onCopy">
+            {{ t('MarkdownEditorAndPreview.ButtonText.Copy') }}
+          </n-button>
         </div>
       </div>
       <n-scrollbar class="markdown-content" x-scrollable trigger="none">
         <n-code v-if="!editState" :code="md" language="markdown" show-line-numbers/>
-        <div v-else ref="editor" contenteditable="true" :innerText="md"/>
+        <textarea v-else class="markdown-editor" v-model="md"></textarea>
       </n-scrollbar>
     </div>
   </div>
@@ -145,6 +161,22 @@ export default defineComponent({
 
   .markdown-content {
     flex-grow: 1;
+
+    .markdown-editor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      resize: none;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+    }
   }
 }
 </style>
