@@ -28,14 +28,14 @@ const notification = useNotification()
 
 // 定义数据
 const demoMarkdownText = ref(defaultInputMarkdownText)
-const demoConfiguration = reactive(deepClone(defaultConfiguration))
+const demoConfiguration = ref(deepClone(defaultConfiguration))
 const demoTestTitles = ref(defaultTestTitles)
 const demoTestMarkdownText = ref(defaultTestMarkdownText)
 
 const integrateConfiguration = () => {
   return {
     version: '1.0.0',
-    configuration: toRaw(demoConfiguration),
+    configuration: demoConfiguration.value,
     sample: {
       testTitles: demoTestTitles.value,
       testMarkdownText: demoTestMarkdownText.value,
@@ -64,8 +64,8 @@ const onImportConfiguration = (configContent) => {
   try {
     const configContentObject = JSON.parse(configContent)
     const parsedConfig = parseConfiguration(configContentObject)
-    demoConfiguration.remove = parsedConfig.configuration.remove
-    demoConfiguration.renumber = parsedConfig.configuration.renumber
+    demoConfiguration.value.remove = parsedConfig.configuration.remove
+    demoConfiguration.value.renumber = parsedConfig.configuration.renumber
     demoTestTitles.value = parsedConfig.sample.testTitles
     demoTestMarkdownText.value = parsedConfig.sample.testMarkdownText
     notification.success({
@@ -98,8 +98,8 @@ onMounted(() => {
     try {
       const configContentObject = JSON.parse(storedConfiguration)
       const parsedConfig = parseConfiguration(configContentObject)
-      demoConfiguration.remove = parsedConfig.configuration.remove
-      demoConfiguration.renumber = parsedConfig.configuration.renumber
+      demoConfiguration.value.remove = parsedConfig.configuration.remove
+      demoConfiguration.value.renumber = parsedConfig.configuration.renumber
       demoTestTitles.value = parsedConfig.sample.testTitles
       demoTestMarkdownText.value = parsedConfig.sample.testMarkdownText
     } catch (e) {

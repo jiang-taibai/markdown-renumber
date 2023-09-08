@@ -34,7 +34,7 @@ export default defineComponent({
     const notification = useNotification()
 
     // 定义数据
-    const localRemoveConfiguration = reactive(deepClone(props.removeConfiguration));
+    const localRemoveConfiguration = ref(deepClone(props.removeConfiguration));
     const checkRegex = (regex) => {
       try {
         new RegExp(regex)
@@ -43,7 +43,7 @@ export default defineComponent({
         return false
       }
     }
-    const serialNumberRegexesValid = ref(props.removeConfiguration.serialNumberRegexes.map((item) => checkRegex(item)))
+    const serialNumberRegexesValid = ref(localRemoveConfiguration.value.serialNumberRegexes.map((item) => checkRegex(item)))
     const localTestTitles = ref([...props.testTitles])
 
     // 配合 NDynamicInput 使用创建一个新的测试标题
@@ -59,11 +59,11 @@ export default defineComponent({
     const testOneTitleLine = (titleLine) => {
       for (const index in serialNumberRegexesValid.value) {
         if (!serialNumberRegexesValid.value[index]) {
-          return t('RemoveSettingTab.TestOneTitleLine.InvalidRegex', {regex: localRemoveConfiguration.serialNumberRegexes[index]})
+          return t('RemoveSettingTab.TestOneTitleLine.InvalidRegex', {regex: localRemoveConfiguration.value.serialNumberRegexes[index]})
         }
       }
       try {
-        return testRemoveSerialNumber(titleLine, localRemoveConfiguration.serialNumberRegexes)
+        return testRemoveSerialNumber(titleLine, localRemoveConfiguration.value.serialNumberRegexes)
       } catch (e) {
         notification.warning({
           title: t('RemoveSettingTab.TestOneTitleLine.Notification.Title'),
@@ -77,17 +77,17 @@ export default defineComponent({
 
     // Toolbar功能函数：恢复本页默认
     const onRestore = () => {
-      localRemoveConfiguration.serialNumberRegexes = deepClone(defaultRemoveConfiguration.serialNumberRegexes)
+      localRemoveConfiguration.value.serialNumberRegexes = deepClone(defaultRemoveConfiguration.serialNumberRegexes)
       localTestTitles.value = defaultTestTitles
     }
 
     // 监听数据变化，实现双向绑定
     watch(localRemoveConfiguration, () => {
-      context.emit('update:removeConfiguration', localRemoveConfiguration);
-    });
+      context.emit('update:removeConfiguration', localRemoveConfiguration.value);
+    }, {deep: true});
     watch(localTestTitles, () => {
-      context.emit('update:testTitles', localTestTitles);
-    });
+      context.emit('update:testTitles', localTestTitles.value);
+    }, {deep: true});
     return {
       t,
       localTestTitles,

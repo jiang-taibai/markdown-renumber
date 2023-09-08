@@ -42,8 +42,7 @@ export default defineComponent({
 
     // 定义数据
     const localRenumberConfiguration = reactive(deepClone(props.renumberConfiguration))
-    const localTestMarkdownText = ref('')
-    localTestMarkdownText.value = props.testMarkdownText
+    const localTestMarkdownText = ref(props.testMarkdownText)
     const processedMarkdownText = ref('')
     // 定义常量
     const serialNumberOptions = markRaw([
@@ -113,6 +112,10 @@ export default defineComponent({
     // 监听数据变化，实现双向绑定
     watch(localRenumberConfiguration, () => {
       context.emit('update:renumberConfiguration', localRenumberConfiguration);
+      testConfiguration()
+    });
+    watch(localTestMarkdownText, () => {
+      context.emit('update:testMarkdownText', localTestMarkdownText.value);
       testConfiguration()
     });
 
