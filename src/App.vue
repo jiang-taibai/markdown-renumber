@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import TestScriptView from "@/views/TestScriptView.vue";
 import {NConfigProvider, NNotificationProvider} from "naive-ui";
 import hljs from 'highlight.js/lib/core'
 import markdown from 'highlight.js/lib/languages/markdown'
