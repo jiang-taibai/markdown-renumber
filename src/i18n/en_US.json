@@ -159,10 +159,6 @@
       "Fail": {
         "Content": "The file does not exist or the uploaded file is not a json file.",
         "Title": "Failed to Import"
-      },
-      "Success": {
-        "Content": "JSON configuration file imported successfully",
-        "Title": "Imported Successfully"
       }
     },
     "UploadMarkdown": {

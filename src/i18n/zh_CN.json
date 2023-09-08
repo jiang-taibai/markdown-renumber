@@ -159,10 +159,6 @@
       "Fail": {
         "Content": "文件不存在或所上传的文件不是 json 文件",
         "Title": "导入失败"
-      },
-      "Success": {
-        "Content": "JSON 配置文件导入成功",
-        "Title": "导入成功"
       }
     },
     "UploadMarkdown": {

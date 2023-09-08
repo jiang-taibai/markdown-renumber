@@ -76,12 +76,6 @@ export default defineComponent({
         const reader = new FileReader();
         reader.onload = (e) => {
           const configContent = e.target.result
-          notification.success({
-            title: t('RenumberTab.UploadConfig.Success.Title'),
-            content: t('RenumberTab.UploadConfig.Success.Content'),
-            duration: 3000,
-            keepAliveOnHover: true,
-          })
           emit('onImportConfiguration', configContent);
         };
         reader.readAsText(file);

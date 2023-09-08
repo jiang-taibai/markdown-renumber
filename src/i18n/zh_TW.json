@@ -159,10 +159,6 @@
       "Fail": {
         "Content": "檔案不存在或所上傳的檔案不是 json 檔案",
         "Title": "匯入失敗"
-      },
-      "Success": {
-        "Content": "JSON 配置檔案匯入成功",
-        "Title": "匯入成功"
       }
     },
     "UploadMarkdown": {
