@@ -14,6 +14,8 @@
 
 </div>
 
+![Cover](assets/img/cover.gif "Cover")
+
 ## 1. 專案背景
 
 在日常寫 Markdown 時，我們可能會遇到這樣的情況：
