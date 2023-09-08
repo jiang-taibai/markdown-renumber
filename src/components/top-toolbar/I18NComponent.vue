@@ -23,8 +23,9 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      const locale = localStorage.getItem('locale')
-      if (locale) {
+      const locale = localStorage.getItem('locale') || navigator.language || navigator.userLanguage;
+      const allowedLang = availableLocaleOptions.map((item) => item.value)
+      if (locale && allowedLang.includes(locale)) {
         i18n.locale.value = locale
       }
     })
