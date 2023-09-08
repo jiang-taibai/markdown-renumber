@@ -3,7 +3,7 @@
 import {
   NButton, NScrollbar, NCode, NButtonGroup, useNotification
 } from "naive-ui";
-import {defineComponent, ref, watchEffect} from "vue";
+import {defineComponent, ref, watch, watchEffect} from "vue";
 import {useI18n} from "vue-i18n";
 
 // 自定义组件
@@ -31,7 +31,7 @@ export default defineComponent({
       required: false,
     },
   },
-  emits: ['update:input-markdown-text', 'onExportConfiguration', 'onImportConfiguration'],
+  emits: ['update:inputMarkdownText', 'onExportConfiguration', 'onImportConfiguration'],
   setup(props, {emit}) {
     // 注册组件
     const notification = useNotification()
@@ -146,6 +146,9 @@ export default defineComponent({
     watchEffect(() => {
       inputMarkdownText.value = props.inputMarkdownText;
     });
+    watch(inputMarkdownText, () => {
+      emit('update:inputMarkdownText', inputMarkdownText.value);
+    })
     return {
       t,
       inputMarkdownText, outputMarkdownText,
