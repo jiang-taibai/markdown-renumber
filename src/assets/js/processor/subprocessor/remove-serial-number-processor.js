@@ -76,7 +76,7 @@ export const testRemoveSerialNumber = (titleLine, serialNumberRegexes) => {
         const title = match[2]
         result = removeSerialNumber(hashes, title, serialNumberRegexes)
     } else {
-        result = t('Processor.RemoveSerialNumberProcessor.InvalidTitleFormat')
+        result = i18n.global.t('Processor.RemoveSerialNumberProcessor.InvalidTitleFormat')
     }
     return result
 }
