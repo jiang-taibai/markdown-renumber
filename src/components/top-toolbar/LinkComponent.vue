@@ -25,6 +25,7 @@ getLatestVersion()
     })
     .catch(err => {
       // 静默处理，允许在无法获取最新版本时继续使用
+      console.error(err)
     });
 
 const links = [
@@ -45,24 +46,19 @@ const links = [
   <n-button-group>
     <n-popover trigger="hover" :disabled="!hasNewVersion">
       <template #trigger>
-        <n-button v-if="hasNewVersion" tag="a" target="_blank" :href="links[0].url">
+        <n-button tag="a" target="_blank" :href="links[0].url">
           <template v-show="hasNewVersion" #icon>
             <n-icon>
-              <img class="button-icon" :src="iconUpgrade" alt="logo"/>
-            </n-icon>
-          </template>
-          <span>{{ localVersion }}</span>
-        </n-button>
-        <n-button v-else tag="a" target="_blank" :href="links[0].url">
-          <template v-show="hasNewVersion" #icon>
-            <n-icon>
-              <img class="button-icon" :src="iconRight" alt="logo"/>
+              <img class="button-icon" :src="hasNewVersion?iconUpgrade:iconRight" alt="logo"/>
             </n-icon>
           </template>
           <span>{{ localVersion }}</span>
         </n-button>
       </template>
-      <span>{{ $t('TopToolbar.Upgraded', {version: state.latestVersion}) }}</span>
+      <span v-if="hasNewVersion">{{
+          $t('TopToolbar.VersionReminder.ExistsNewVersion', {version: state.latestVersion})
+        }}</span>
+      <span v-else>{{ $t('TopToolbar.VersionReminder.NoNewVersion') }}</span>
     </n-popover>
     <n-button tag="a" target="_blank"
               v-for="link in links" :key="`link-${link.name}`" :href="link.url">
