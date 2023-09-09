@@ -48,7 +48,7 @@ You can use this project by visiting the following link:
 
 ### 3.2 Download to local
 
-You can also download this project locally from [Releases](https://github.com/jiang-taibai/markdown-renumber/releases/latest) and open the `index.html` file in the compressed package to use it.
+You can also download it from [GitHub Releases](https://github.com/jiang-taibai/markdown-renumber/releases/latest) or [Gitee Releases](https://gitee.com/jiang-taibai/markdown-renumber/releases/latest) Download this project locally and open the `index.html` file in the compressed package to use it.
 
 ## 4. Project screenshots
 

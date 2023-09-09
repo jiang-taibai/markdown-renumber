@@ -48,7 +48,7 @@
 
 ### 3.2 下载到本地
 
-你也可以从 [Releases](https://github.com/jiang-taibai/markdown-renumber/releases/latest) 将本项目下载到本地，打开压缩包内的 `index.html` 文件即可使用。
+你也可以从 [GitHub Releases](https://github.com/jiang-taibai/markdown-renumber/releases/latest) 或者 [Gitee Releases](https://gitee.com/jiang-taibai/markdown-renumber/releases/latest) 将本项目下载到本地，打开压缩包内的 `index.html` 文件即可使用。
 
 ## 4. 项目截图
 
