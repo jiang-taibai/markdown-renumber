@@ -44,7 +44,7 @@ const links = [
 
 <template>
   <n-button-group>
-    <n-popover trigger="hover" :disabled="!hasNewVersion">
+    <n-popover trigger="hover">
       <template #trigger>
         <n-button tag="a" target="_blank" :href="links[0].url">
           <template v-show="hasNewVersion" #icon>
@@ -55,10 +55,12 @@ const links = [
           <span>{{ localVersion }}</span>
         </n-button>
       </template>
-      <span v-if="hasNewVersion">{{
+      <div>
+        <span v-if="hasNewVersion">{{
           $t('TopToolbar.VersionReminder.ExistsNewVersion', {version: state.latestVersion})
         }}</span>
-      <span v-else>{{ $t('TopToolbar.VersionReminder.NoNewVersion') }}</span>
+        <span v-else>{{ $t('TopToolbar.VersionReminder.NoNewVersion') }}</span>
+      </div>
     </n-popover>
     <n-button tag="a" target="_blank"
               v-for="link in links" :key="`link-${link.name}`" :href="link.url">
