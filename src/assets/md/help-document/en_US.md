@@ -17,19 +17,19 @@ When removing the title, the title in the document will be extracted, such as `#
 flowchart TD
     A[## 2.1 Title]
     A --> B[split into # and original title]
-    B --> B1[2.1 header]
+    B --> B1[2.1 Title]
     B --> B2[##]
     B1 --> C[According to the regular list, match the longest serial number]
-    C --> D1[Type 1]
-    C --> D2[second type]
-    C --> D3[the third type]
+    C --> D1[Condition 1]
+    C --> D2[Condition 2]
+    C --> D3[Condition 3]
     D1 --> D11[2]
-    D1 --> D12[.1 header]
+    D1 --> D12[.1 Title]
     D2 --> D21[2.]
-    D2 --> D22[1 title]
+    D2 --> D22[1 Title]
     D3 --> D31[2.1]
     D3 --> D32[Title]
-    B2 --> E[## title]
+    B2 --> E[## Title]
     D32 --> E
 ```
 
@@ -68,13 +68,13 @@ If you do not specify the rules for generating serial numbers for fourth-level t
 
 (Ignore the generation of serial numbers here and only show the effect of this strategy)
 ```markdown
-# Title One
+# Title 1
 
 ## Title 2
 
 ### Title 3
 
-> Title Four
+> Title 4
 ```
 
 ## 3.2 Title strategy for layers greater than 6
@@ -97,7 +97,7 @@ The type is the type of the serial number generated, and the optional types are:
 - Roman numerals (lower case): `[NULL, i, ii, iii, iv, ...]`
 - Roman numerals (upper case): `[NULL, I, II, III, IV, ...]`
 - Chinese numbers (lowercase): `[〇, 一, 二, 三, 四, ...]`
-- Chinese numerals (uppercase): `[zero, one, two, three, four, ...]`
+- Chinese numerals (uppercase): `[零, 壹, 贰, 叁, 肆, ...]`
 
 **Note**: `NULL` here means the serial number that cannot be used, but for the alignment of each type, the numbering starts from 0.
 
@@ -114,7 +114,7 @@ The starting sequence number is the starting value of the sequence number
 
 # 1. Chapter 2
 
-# 2. Chapter Three
+# 2. Chapter 3
 ```
 
 > Example 2: Lowercase Roman numerals, starting number is 1
@@ -140,21 +140,21 @@ The prefix and suffix are the characters before and after the serial number, whi
 > Example 1: Chinese numbers, the starting serial number is 1, the prefix is "第", and the suffix is "章"
 
 ```markdown
-# Title of Chapter 1 Chapter 1
+# 第一章 Chapter 1
 
-# Chapter 2 Title of Chapter 2
+# 第二章 Chapter 2
 
-# Chapter 3 Title of Chapter 3
+# 第三章 Chapter 3
 ```
 
 > Example 2: lowercase letters, the starting sequence number is 1, no prefix, and the suffix is ")"
 
 ```markdown
-# a) Title of section one
+# a) Section 1
 
-# b) Title of section two
+# b) Section 2
 
-# c) Title of section three
+# c) Section 3
 ```
 
 ## 3.6 Suffix
@@ -207,12 +207,12 @@ The following shows the generation process of an unsightly but highly descriptiv
 
 ```mermaid
 flowchart TD
-    A[Original title: ### Third level title]
+    A[Original title: ### Title]
     B[split into # and original title]
     A --> B
     B -- Split part --> B1[###]
     B -- Follow-up process --> B2[Generate serial number]
-    B -- split part --> B3[third-level title]
+    B -- split part --> B3[Title]
     B2 --> C1["First level serial number: (1)"]
     B2 --> C2["Second level serial number: [1]"]
     B2 --> C3["Third level serial number: -1."]
@@ -220,7 +220,7 @@ flowchart TD
     C2 --> D
     C3 --> D
     D --> E["Due to the third-level setting, the suffix at the end is not displayed Final serial number: (1)[1]-1"]
-    E --> F["### (1)[1]-1 Third level title"]
+    E --> F["### (1)[1]-1 Title"]
     B1 --> F
     B3 --> F
 ```
@@ -277,13 +277,13 @@ The following shows the generation process for a hierarchical configuration with
 
 ```mermaid
 flowchart TD
-    A["Basic serial numbers at all levels (1), (i), (I), (a), (A), (one)"]
+    A["Basic serial numbers at all levels (1), (i), (I), (a), (A), (一)"]
     A -- Independent --> B["First-level serial number after splicing: (1)"]
     B -- Dependent --> C["Second-level serial number after splicing: (1)(i)"]
     C -- Independent --> D["The third-level serial number after splicing: (I)"]
     D -- Dependent --> E["The fourth-level serial number after splicing: (I)(a)"]
     E -- Independent --> F["The fifth-level serial number after splicing: (A)"]
-    F -- Dependent --> G["Sixth-level serial number after splicing: (A) (one)"]
+    F -- Dependent --> G["Sixth-level serial number after splicing: (A)(一)"]
 ```
 
 This is the effect of this configuration:
@@ -301,8 +301,6 @@ This is the effect of this configuration:
 
 ###### (A)(1) Title 6
 ```
-
-
 
 # 4. Configuration storage and privacy
 
