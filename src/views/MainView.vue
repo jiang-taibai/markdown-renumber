@@ -17,7 +17,7 @@ import I18NComponent from "@/components/top-toolbar/I18NComponent.vue";
 import {
   defaultInputMarkdownText, defaultConfiguration,
   defaultTestMarkdownText, defaultTestTitles,
-} from "@/assets/js/data/default";
+} from "@/assets/js/data/default-v1";
 import {exportConfiguration, parseConfiguration} from "@/assets/js/utils/configuration-io";
 import {deepClone} from "@/assets/js/utils/deep-clone";
 import LinkComponent from "@/components/top-toolbar/LinkComponent.vue";
@@ -34,7 +34,10 @@ const demoTestMarkdownText = ref(defaultTestMarkdownText)
 
 const integrateConfiguration = () => {
   return {
-    version: '1.0.0',
+    // 该版本号并非软件版本号，而是配置文件版本号
+    // 约定 1.x 可互相兼容，高版本可以为低版本提供默认值，低版本可以读取高版本的配置
+    // x 表示新功能的增加，只会新增配置项，而不会删除键、修改键名
+    version: '1.0',
     configuration: demoConfiguration.value,
     sample: {
       testTitles: demoTestTitles.value,

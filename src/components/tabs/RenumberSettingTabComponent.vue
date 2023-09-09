@@ -8,7 +8,7 @@ import {
 import {useI18n} from "vue-i18n";
 
 // 默认数据
-import {defaultRenumberConfiguration, defaultTestMarkdownText} from "@/assets/js/data/default";
+import {defaultRenumberConfiguration, defaultTestMarkdownText} from "@/assets/js/data/default-v1";
 
 // 自定义组件
 import MarkdownEditorAndPreview from "@/components/public/MarkdownEditorAndPreviewComponent.vue";

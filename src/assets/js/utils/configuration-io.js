@@ -1,5 +1,6 @@
 import {downloadFile} from "@/assets/js/utils/file-output";
-import i18n from '@/i18n/index'
+import defaultConfig_v1 from "@/assets/js/data/default-v1"
+import i18n from '@/i18n'
 
 /**
  * 获取对象的类型，由于 typeof 无法区分数组和对象，所以使用 Object.prototype.toString.call(obj) 来获取对象的类型
@@ -11,101 +12,86 @@ function getType(obj) {
     return Object.prototype.toString.call(obj);
 }
 
-/**
- * 检查配置文件对象的结构和类型是否符合标准
- *
- * @param standardObj   标准配置文件对象，只用于检查结构和类型，不用于检查值和数组长度等无关基本结构的属性
- * @param testObj       待检查的配置文件对象
- * @param path          待检查的配置文件对象的路径
- * @returns {{reason: string, match: boolean}|{reason: string, match: boolean}|{reason: string, match: boolean}|*|{reason: string, match: boolean}}
- */
-function checkStructureAndType(standardObj, testObj, path = '') {
-    const standardKeys = Object.keys(standardObj);
-    const testKeys = Object.keys(testObj);
-
-    if (standardKeys.length !== testKeys.length) {
-        return {
-            match: false,
-            reason: i18n.global.t('ConfigIO.Parse.Error.KeyCountMismatch', {path: path}),
-        };
-    }
-
-    for (const key of standardKeys) {
-        if (!testObj.hasOwnProperty(key)) {
-            return {
-                match: false,
-                reason: i18n.global.t('ConfigIO.Parse.Error.KeyNotExists', {path: `${path}.${key}`}),
-            };
-        }
-
-        const standardType = getType(standardObj[key]);
-        const testType = getType(testObj[key]);
-
-        if (standardType !== testType) {
-            return {
-                match: false,
-                reason: t('ConfigIO.Parse.Error.TypeMismatch', {
-                    path: `${path}.${key}`,
-                    standardType: standardType, testType: testType
-                })
-            };
-        }
-
-        if (standardType === '[object Object]' && standardObj[key] !== null && testObj[key] !== null) {
-            const result = checkStructureAndType(standardObj[key], testObj[key], `${path}.${key}`);
-            if (!result.match) {
+function deepMerge(defaultConfig, userConfig) {
+    // 首先将当前层级的默认配置复制到结果对象中
+    const result = {
+        success: true,
+        config: {...defaultConfig},
+        message: '',
+    };
+    for (const key in userConfig) {
+        const defaultConfigKeyType = getType(defaultConfig[key]);
+        const userConfigKeyType = getType(userConfig[key]);
+        if (userConfigKeyType === '[object Object]' && userConfig[key] !== null && defaultConfig.hasOwnProperty(key)) {
+            // 如果是对象，则递归合并
+            const nextResult = deepMerge(defaultConfig[key], userConfig[key]);
+            if (nextResult.success) {
+                result.config[key] = nextResult.config;
+            } else {
+                result.success = false;
+                result.message = nextResult.message;
                 return result;
             }
+        } else if (userConfigKeyType === defaultConfigKeyType) {
+            // 同版本策略：用户配置覆盖默认配置
+            result.config[key] = userConfig[key];
+        } else if (defaultConfigKeyType === '[object Undefined]' || defaultConfigKeyType === '[object Null]') {
+            // 高版本用户配置兼容低版本默认配置策略：由于用不到高版本用户配置，所以无需赋值
+        } else {
+            // 类型不匹配
+            result.success = false;
+            result.message = i18n.global.t('ConfigIO.DeepMerge.TypeError', {
+                field: key,
+                userType: userConfigKeyType,
+                defaultType: defaultConfigKeyType,
+            })
+            return result;
         }
     }
-
-    return {
-        match: true,
-        reason: ''
-    };
+    return result;
 }
 
 /**
  * 解析配置文件对象，兼容不同版本
  *
- * @param obj   待解析的配置文件对象
+ * @param userConfig   待解析的配置文件对象
  * @returns {{configuration: *, version, sample: *}}
  */
-export const parseConfiguration = (obj) => {
-    if (!obj.version) {
+export const parseConfiguration = (userConfig) => {
+    if (!userConfig.version) {
         throw new Error(i18n.global.t('ConfigIO.Parse.Error.VersionNotSpecified'))
     }
-    if ('1.0.0' <= obj.version && obj.version <= '1.0.0') {
-        const standardConfiguration = {
-            version: '1.0.0',
+    if ('1.0' <= userConfig.version && userConfig.version < '2.0') {
+        const defaultConfig = {
+            version: userConfig.version,
             configuration: {
                 remove: {
-                    serialNumberRegexes: []
+                    serialNumberRegexes: defaultConfig_v1.defaultConfiguration.remove.serialNumberRegexes
                 },
                 renumber: {
                     handles: {
-                        unspecifiedLevel: '',
-                        gt6Level: '',
+                        unspecifiedLevel: defaultConfig_v1.defaultConfiguration.renumber.handles.unspecifiedLevel,
+                        gt6Level: defaultConfig_v1.defaultConfiguration.renumber.handles.gt6Level,
                     },
-                    strategyOfLevels: []
+                    strategyOfLevels: defaultConfig_v1.defaultConfiguration.renumber.strategyOfLevels
                 }
             },
             sample: {
-                testTitles: [],
-                testMarkdownText: '',
+                testTitles: defaultConfig_v1.defaultTestTitles,
+                testMarkdownText: defaultConfig_v1.defaultTestMarkdownText,
             },
         }
-        const checkResult = checkStructureAndType(standardConfiguration, obj, 'ImportedConfigurationFile')
-        if (!checkResult.match) {
-            throw new Error(checkResult.reason)
+        const result = deepMerge(defaultConfig, userConfig)
+        if (!result.success) {
+            throw new Error(result.message)
         }
         return {
-            version: obj.version,
-            configuration: obj.configuration,
-            sample: obj.sample,
+            version: userConfig.version,
+            configuration: result.config.configuration,
+            sample: result.config.sample,
         }
     } else {
-        throw new Error(i18n.global.t('ConfigIO.Parse.Error.VersionNotSupported'))
+        throw new Error(i18n.global.t('ConfigIO.Parse.Error.VersionNotSupported', {version: userConfig.version}))
     }
 }
 

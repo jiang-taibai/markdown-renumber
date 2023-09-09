@@ -113,3 +113,9 @@ export const defaultTestMarkdownText = `# Level 1
 
 ####### Level 7 (Titles greater than 6 levels)
 `
+
+export default {
+    defaultConfiguration,
+    defaultTestTitles,
+    defaultTestMarkdownText,
+}

@@ -7,7 +7,7 @@ import {defineComponent, reactive, ref, watch} from "vue";
 import {useI18n} from "vue-i18n";
 
 // 默认数据
-import {defaultTestTitles, defaultRemoveConfiguration} from "@/assets/js/data/default";
+import {defaultTestTitles, defaultRemoveConfiguration} from "@/assets/js/data/default-v1";
 
 // 自定义脚本
 import {testRemoveSerialNumber} from "@/assets/js/processor/subprocessor/remove-serial-number-processor";

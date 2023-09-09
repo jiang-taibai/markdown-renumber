@@ -1,5 +1,8 @@
 {
   "ConfigIO": {
+    "DeepMerge": {
+      "TypeError": "配置文件中 {field} 的类型应当为 {defaultType}，而错误地设置为 {userType}"
+    },
     "Export": {
       "Notification": {
         "Error": {
@@ -26,11 +29,8 @@
     },
     "Parse": {
       "Error": {
-        "KeyCountMismatch": "配置文件 {path} 字段属性数量不匹配",
-        "KeyNotExists": "配置文件缺少 {path} 字段",
-        "TypeMismatch": "配置文件中 {path} 字段的类型为 {testType}，但是正确类型为 {standardType}",
         "VersionNotSpecified": "配置文件版本号缺失",
-        "VersionNotSupported": "配置文件版本号不支持"
+        "VersionNotSupported": "不支持的配置文件版本号 {version}，请访问 GitHub 或 Gitee 下载最新发行版压缩包，或清除浏览器缓存以访问最新版"
       }
     }
   },
@@ -197,6 +197,9 @@
     }
   },
   "TopToolbar": {
-    "Upgraded": "最新版本 {version}"
+    "VersionReminder": {
+      "ExistsNewVersion": "最新版本 {version}",
+      "NoNewVersion": "已是最新版"
+    }
   }
 }

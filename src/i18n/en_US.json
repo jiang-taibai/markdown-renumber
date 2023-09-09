@@ -1,5 +1,8 @@
 {
   "ConfigIO": {
+    "DeepMerge": {
+      "TypeError": "The type of {field} in the configuration file should be {defaultType} but is incorrectly set to {userType}"
+    },
     "Export": {
       "Notification": {
         "Error": {
@@ -26,11 +29,8 @@
     },
     "Parse": {
       "Error": {
-        "KeyCountMismatch": "Configuration file {path} field attribute number mismatch",
-        "KeyNotExists": "Configuration file is missing {path} field",
-        "TypeMismatch": "The {path} field in the configuration file is of type {testType}, but the correct type is {standardType}",
         "VersionNotSpecified": "Configuration file version number is missing",
-        "VersionNotSupported": "Configuration file version number is not supported"
+        "VersionNotSupported": "Unsupported configuration file version number {version}, please visit GitHub or Gitee to download the latest release compressed package, or clear the browser cache to access the latest version"
       }
     }
   },
@@ -197,6 +197,9 @@
     }
   },
   "TopToolbar": {
-    "Upgraded": "Latest Version {version}"
+    "VersionReminder": {
+      "ExistsNewVersion": "Latest Version {version}",
+      "NoNewVersion": "Already the latest version"
+    }
   }
 }

@@ -1,5 +1,8 @@
 {
   "ConfigIO": {
+    "DeepMerge": {
+      "TypeError": "配置文件中 {field} 的類型應當為 {defaultType}，而錯誤地設置為 {userType}"
+    },
     "Export": {
       "Notification": {
         "Error": {
@@ -26,11 +29,8 @@
     },
     "Parse": {
       "Error": {
-        "KeyCountMismatch": "配置檔案 {path} 欄位屬性數量不匹配",
-        "KeyNotExists": "配置檔案缺少 {path} 欄位",
-        "TypeMismatch": "配置檔案中 {path} 欄位的型別為 {testType}，但是正確型別為 {standardType}",
         "VersionNotSpecified": "配置檔案版本號缺失",
-        "VersionNotSupported": "配置檔案版本號不支援"
+        "VersionNotSupported": "不支持的配置文件版本號 {version}，請訪問 GitHub 或 Gitee 下載最新發行版壓縮包，或清除瀏覽器緩存以訪問最新版"
       }
     }
   },
@@ -197,6 +197,9 @@
     }
   },
   "TopToolbar": {
-    "Upgraded": "最新版本 {version}"
+    "VersionReminder": {
+      "ExistsNewVersion": "最新版本 {version}",
+      "NoNewVersion": "已是最新版"
+    }
   }
 }
