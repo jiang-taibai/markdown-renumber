@@ -22,8 +22,8 @@
 
 When writing Markdown on a daily basis, we may encounter such a situation:
 
-- Document migration and integration: when migrating or integrating documents, the original title number may be confused
-- Document reconstruction: When reconstructing a document, for example, only one title is modified, but the numbers of all subsequent titles are changed.
+- **Document migration and integration**: when migrating or integrating documents, the original title number may be confused
+- **Document reconstruction**: When reconstructing a document, for example, only one title is modified, but the numbers of all subsequent titles are changed.
 
 These situations are time-consuming, labor-intensive, and error-prone to handle. Therefore, we urgently need a tool to help us solve these problems.
 
@@ -31,11 +31,11 @@ While searching the internet for solutions, I only found basic script code that 
 
 ## 2. Project Features
 
-- One-click processing: You only need to import the Markdown document to be numbered, and all operations can be completed
-- The whole process of number removal and generation: the original title number can be removed and then re-numbered
-- Operation-friendly: Web-based GUI interface, no need to execute code
-- Highly customizable: Native serial number removal rules are implemented by regular expression lists, and number generation rules can be highly customized by users.
-- Safe and reliable: the project is open source and documents can be processed offline. Configuration files are stored locally and are not uploaded to the server. No user information will be collected
+- **One-click processing**: You only need to import the Markdown document to be numbered, and all operations can be completed
+- **The whole process of number removal and generation**: the original title number can be removed and then re-numbered
+- **Operation-friendly**: Web-based GUI interface, no need to execute code
+- **Highly customizable**: Native serial number removal rules are implemented by regular expression lists, and number generation rules can be highly customized by users.
+- **Safe and reliable**: the project is open source and documents can be processed offline. Configuration files are stored locally and are not uploaded to the server. No user information will be collected
 
 ## 3. Use
 
