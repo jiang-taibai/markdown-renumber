@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/interaction-WebUI-%2396C40F" alt="Interaction-WebUI"/>
-  <img src="https://img.shields.io/badge/release-1.0.2-%231081C1" alt="Version-1.0.2"/>
+  <img src="https://img.shields.io/badge/release-1.0.3-%231081C1" alt="Version"/>
   <img src="https://img.shields.io/badge/license-MIT-%2396C40F" alt="MIT"/>
 </div>
 

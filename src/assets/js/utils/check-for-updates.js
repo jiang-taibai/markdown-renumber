@@ -31,7 +31,7 @@ export function getLatestVersion() {
                 })
             })
         } else {
-            resolve('v1.0.2');
+            resolve('v1.0.3');
         }
     })
 }
