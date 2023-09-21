@@ -74,6 +74,10 @@ export default defineComponent({
         return t('RemoveSettingTab.TestOneTitleLine.TestFailedOutput', {msg: e.message})
       }
     };
+    // 移除标题行中的 # 符号
+    const removeHashes = (titleLine) => {
+      return titleLine.replace(/^#* /, '')
+    }
 
     // Toolbar功能函数：恢复本页默认
     const onRestore = () => {
@@ -92,7 +96,7 @@ export default defineComponent({
       t,
       localTestTitles,
       localRemoveConfiguration, serialNumberRegexesValid,
-      onCreateNewTestTitle, onRestore, testOneTitleLine, checkRegex,
+      onCreateNewTestTitle, onRestore, removeHashes, testOneTitleLine, checkRegex,
     }
   }
 })
@@ -123,8 +127,11 @@ export default defineComponent({
           <n-dynamic-input v-model:value="localTestTitles" :on-create="onCreateNewTestTitle">
             <template #default="{ index }">
               <div class="test-item">
-                <n-input class="test-input" v-model:value="localTestTitles[index]" style="margin-right: 12px;"
+                <n-input class="test-input" v-model:value="localTestTitles[index]"
                          :placeholder="t('RemoveSettingTab.PreviewArea.InputPlaceholder')"/>
+                <div class="test-symbol">=></div>
+                <n-input class="test-input" :value="removeHashes(localTestTitles[index])"
+                         :placeholder="t('RemoveSettingTab.PreviewArea.InputPlaceholder')" disabled/>
                 <div class="test-symbol">=></div>
                 <div class="test-output">{{ testOneTitleLine(localTestTitles[index]) }}</div>
               </div>
